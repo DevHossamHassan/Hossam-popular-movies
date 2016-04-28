@@ -1,0 +1,14 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="movieVideoView">175dp</dimen>
+    <dimen name="movieVideoViewHeight">300dp</dimen>
+    <dimen name="mainContainerWidth">230dp</dimen>
+    <dimen name="tvMovieTitleOfficialSize">18sp</dimen>
+    <dimen name="tvMovieReleaseDateSize">16sp</dimen>
+    <dimen name="tvRatingTextSize">18sp</dimen>
+</resources>

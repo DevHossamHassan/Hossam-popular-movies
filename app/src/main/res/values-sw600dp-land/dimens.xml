@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_bar_height">380dp</dimen>
+    <dimen name="movieVideoView">260dp</dimen>
+    <dimen name="movieVideoViewHeight">400dp</dimen>
+    <dimen name="mainContainerWidth">450dp</dimen>
+    <dimen name="tvMovieTitleOfficialSize">28sp</dimen>
+    <dimen name="tvMovieReleaseDateSize">26sp</dimen>
+    <dimen name="tvRatingTextSize">28sp</dimen>
+
+</resources>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:id="@+id/imgMovieVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backgroundMovie"
+            android:layout_width="@dimen/movieVideoView"
+            android:layout_height="@dimen/movieVideoViewHeight"
+            android:layout_margin="8dp"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/backgroundMovieOverlay"
+
+            android:layout_width="@dimen/movieVideoView"
+            android:layout_height="@dimen/movieVideoViewHeight"
+
+            android:layout_margin="8dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/overlay_video" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgMovieVideo">
+
+        <TextView
+            android:id="@+id/tvMovieTitleOfficial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Hossam Hassan"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/tvMovieTitleOfficialSize"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/tvMovieReleaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvMovieTitleOfficial"
+            android:textSize="@dimen/tvMovieReleaseDateSize"
+            android:text="Release date: \n" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvOverViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgMovieVideo"
+        android:layout_margin="8dp"
+        android:text="Overview :"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/tvMovieOverView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgMovieVideo"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/large_text"
+        android:textColor="@android:color/black" />
+    <FrameLayout
+        android:id="@+id/reviewsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvMovieOverView">
+
+
+    </FrameLayout>
+
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/imgMovieVideo"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="8dp"
+        android:layout_toRightOf="@id/imgMovieVideo"
+        android:backgroundTint="@color/colorAccent"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:progressTint="@color/colorPrimary"
+        android:rating="5"
+        android:secondaryProgressTint="@color/colorAccent2"
+
+        android:stepSize="0.5" />
+
+    <TextView
+        android:id="@+id/tvRatingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rating_bar"
+        android:layout_toRightOf="@id/imgMovieVideo"
+        android:text="Rating "
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/tvRatingTextSize" />
+
+    <FrameLayout
+        android:id="@+id/progressFrame"
+        android:layout_width="@dimen/movieVideoView"
+        android:layout_height="@dimen/movieVideoViewHeight"
+        android:layout_margin="10dp"
+        android:background="@color/colorOverLay"
+        android:visibility="invisible">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal" />
+
+    </FrameLayout>
+
+</RelativeLayout>

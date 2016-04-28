@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/inch_7_layout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="me.branded.hossamhassan.hossam_popular_movies.ActivityMain">
+
+
+    <FrameLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="@dimen/mainContainerWidth"
+        android:layout_height="match_parent" />
+    <FrameLayout
+        android:id="@+id/mainContainerRight"
+        android:layout_toRightOf="@id/mainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </FrameLayout>
+
+</RelativeLayout>
