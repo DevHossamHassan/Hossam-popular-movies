@@ -6,6 +6,6 @@ and all details about specific movie such as Official trailers , reviews , relea
 Search for specific movie 
 ![screen](https://github.com/DevHossamHassan/Hossam-popular-movies/blob/master/arts/search.png)
 
-![screen](https://github.com/DevHossamHassan/Hossam-popular-movies/blob/master/arts/popular_main.png)
+![screen](https://github.com/DevHossamHassan/Hossam-popular-movies/blob/master/arts/popular_main_popup.png)
 
 
