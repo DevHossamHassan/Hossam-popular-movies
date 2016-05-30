@@ -11,4 +11,9 @@
     <dimen name="tvMovieTitleOfficialSize">18sp</dimen>
     <dimen name="tvMovieReleaseDateSize">16sp</dimen>
     <dimen name="tvRatingTextSize">18sp</dimen>
+    <dimen name="elevation_tool_bar">4dp</dimen>
+    <dimen name="search_edt_hight">44dp</dimen>
+    <dimen name="search_edt_padding">2dp</dimen>
+    <dimen name="recycler_padding">12dp</dimen>
+    <dimen name="row_search_ic_width">40dp</dimen>
 </resources>

@@ -7,5 +7,6 @@
     <dimen name="tvMovieTitleOfficialSize">28sp</dimen>
     <dimen name="tvMovieReleaseDateSize">26sp</dimen>
     <dimen name="tvRatingTextSize">28sp</dimen>
+    <dimen name="elevation_tool_bar">4dp</dimen>
 
 </resources>

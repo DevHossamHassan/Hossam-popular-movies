@@ -22,7 +22,10 @@
         <activity
             android:name=".ActivityScrollingMovieDetails"
             android:label="@string/title_activity_activity_scrolling_movie_details"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ActivitySearch"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

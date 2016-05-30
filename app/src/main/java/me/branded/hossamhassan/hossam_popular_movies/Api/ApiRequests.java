@@ -36,4 +36,10 @@ public interface ApiRequests {
     @GET("movie/{id}/reviews?api_key=8e630989b36d359dcf7d077d1487584e")
     Call<ReviewsResults> getReviews(@Path("id") int movieId);
 
+    /*
+    * search for movies
+    * */
+    @GET("search/movie?api_key=8e630989b36d359dcf7d077d1487584e")
+    Call<DataBase> getSearchResultFor(@Query("query")String query,@Query("page") int page);
+
 }

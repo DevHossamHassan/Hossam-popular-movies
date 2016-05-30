@@ -20,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -56,6 +57,14 @@ public class FragmentDetailed extends Fragment {
     //Find views
     @Bind(R.id.progressFrame)
     FrameLayout progressFrame;
+    @Bind(R.id.share_action_detailed)
+    ImageButton btnShareDetailed;
+
+    @OnClick(R.id.share_action_detailed)
+    void shareMovie() {
+        requestVideoId(false);
+    }
+
     @Bind(R.id.tvMovieTitleOfficial)
     TextView tvMovieOfficial;
     @Bind(R.id.tvMovieReleaseDate)
@@ -134,6 +143,7 @@ public class FragmentDetailed extends Fragment {
         View view = inflater.inflate(R.layout.fragment_detailed_full, container, false);
         ButterKnife.bind(this, view);
         init();
+
         if (savedInstanceState != null) {
             hideDefaultView();
             selectedMovie = savedInstanceState.getParcelable(Const.SELECTED_MOVIE_FOR_DETAILED);
@@ -197,7 +207,7 @@ public class FragmentDetailed extends Fragment {
         apiRequests = retrofit.create(ApiRequests.class);
         dbManager = HossPopularMoviesApp.getDbManagerInstance();
         favMovies = new ArrayList<>();
-
+        btnShareDetailed.setVisibility(View.VISIBLE);
     }
 
     public void updateViews(Result movie, int i) {
@@ -324,4 +334,59 @@ public class FragmentDetailed extends Fragment {
         super.onSaveInstanceState(outState);
         outState.putParcelable(Const.SELECTED_MOVIE_FOR_DETAILED, selectedMovie);
     }
+
+
+    void requestVideoId(final boolean watch) {
+        Call<VideoResult> callForVideo = apiRequests.getMovieVideo(selectedMovie.getId());
+        if (Internet.isConnectingToInternet(context)) {
+            //
+            progressFrame.setVisibility(View.VISIBLE);
+
+            callForVideo.enqueue(new Callback<VideoResult>() {
+                @Override
+                public void onResponse(Call<VideoResult> call, Response<VideoResult> VideoIdResponse) {
+
+                    if (VideoIdResponse.isSuccessful()) {//True if status code (200-300)
+                        if (VideoIdResponse.body() != null) {//True if response can be parsed in POJO
+
+                            ResultArray[] resultArray = VideoIdResponse.body().getResults();
+                            if (watch)
+                                watchYoutubeVideo(resultArray[0].getKey());
+                            else
+                                setMovieIdToShareMovie(resultArray[0].getKey());
+
+                        }
+
+                    }
+                    if (VideoIdResponse.code() >= 500) {
+                        //Server error
+                        Toast.makeText(context, "Please: " + "Check your internet connection", Toast.LENGTH_SHORT).show();
+
+                    }
+                    progressFrame.setVisibility(View.INVISIBLE);
+
+
+                }
+
+                @Override
+                public void onFailure(Call<VideoResult> call, Throwable t) {
+                    progressFrame.setVisibility(View.INVISIBLE);
+
+                    t.printStackTrace();
+                    if (t instanceof SocketTimeoutException || t instanceof SocketException)
+                        Toast.makeText(context, "Please: " + "Check your internet connection", Toast.LENGTH_SHORT).show();
+                }
+
+            });
+        } else {
+            Toast.makeText(context, "Please: " + "Check your internet connection", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    private void setMovieIdToShareMovie(String key) {
+
+        HossPopularMoviesApp.shareMovie(getActivity(), selectedMovie.getOverview(), selectedMovie.getTitle(), key);
+    }
+
 }

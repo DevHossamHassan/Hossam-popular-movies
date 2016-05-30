@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.PopupMenu;
@@ -63,7 +64,7 @@ public class FragmentMoviesList extends FragmentParent implements SwipeRefreshLa
     @Bind(R.id.btnFilter)
     ImageView btnFilter;
     int requestPage;
-
+    //filter button
     @OnClick(R.id.btnFilter)
     void openFilterMenu() {
         showFilterPopUp(btnFilter);
@@ -111,6 +112,8 @@ public class FragmentMoviesList extends FragmentParent implements SwipeRefreshLa
             lastIndex = savedInstanceState.getInt(Const.FILTER_LAST_INDEX);
             resultsList = savedInstanceState.getParcelableArrayList(Const.MOVIES_LIST);
             setResultsAdapter(resultsList);
+            changeTitle();
+
         } else {
             checkFilter(filterId);
         }
@@ -216,6 +219,8 @@ public class FragmentMoviesList extends FragmentParent implements SwipeRefreshLa
                             filterId = 1;
                             checkFilter(filterId);
                             lastIndex = 1;
+                            changeTitle();
+
                         }
                         return true;
 
@@ -224,6 +229,7 @@ public class FragmentMoviesList extends FragmentParent implements SwipeRefreshLa
                             filterId = 2;
                             checkFilter(filterId);
                             lastIndex = 2;
+                            changeTitle();
                         }
                         return true;
                     case R.id.filter_favorite://Favorite
@@ -231,6 +237,7 @@ public class FragmentMoviesList extends FragmentParent implements SwipeRefreshLa
                             filterId = 3;
                             checkFilter(filterId);
                             lastIndex = 3;
+                            changeTitle();
                         }
                         return true;
 
@@ -429,6 +436,22 @@ public class FragmentMoviesList extends FragmentParent implements SwipeRefreshLa
 
     public int getFilterID() {
         return filterId;
+    }
+
+    void changeTitle() {
+        switch (filterId) {
+            case 1:
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Popular movies");
+                break;
+            case 2:
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Top Rated movies");
+
+                break;
+            case 3:
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Favorite movies");
+
+                break;
+        }
     }
 
 }

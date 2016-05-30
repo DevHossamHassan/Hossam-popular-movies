@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import butterknife.ButterKnife;
@@ -115,5 +117,29 @@ public class ActivityMain extends AppCompatActivity implements FragmentMoviesLis
             getSupportFragmentManager().putFragment(outState, Const.FRAGMENT_MOVIES_DETAILS, fragmentDetailed);
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
 
+        /*MenuItem item = menu.findItem(R.id.action_search);
+        searchView.setMenuItem(item);*/
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_search) {
+            openActivitySearch();
+        }
+
+        return super.onOptionsItemSelected(item);
+
+    }
+    public void openActivitySearch() {
+        Intent intent = new Intent(this, ActivitySearch.class);
+        startActivity(intent);
+    }
 }

@@ -6,4 +6,6 @@
     <color name="colorError">#b08dc1</color>
     <color name="colorAccent2">#f5c905</color>
     <color name="colorOverLay">#640a0a0a</color>
+    <color name="hintText">#7dffffff</color>
+
 </resources>

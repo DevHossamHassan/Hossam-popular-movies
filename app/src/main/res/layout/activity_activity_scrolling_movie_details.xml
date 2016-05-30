@@ -36,7 +36,17 @@
                 android:layout_height="?attr/actionBarSize"
                 android:title=""
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+                <ImageButton
+                    android:background="@android:color/transparent"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_gravity="end"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/share_action_detailed"
+                    android:src="@drawable/ic_action_share"/>
+            </android.support.v7.widget.Toolbar>
 
 
         </android.support.design.widget.CollapsingToolbarLayout>

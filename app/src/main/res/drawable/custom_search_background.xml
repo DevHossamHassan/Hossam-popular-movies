@@ -1,0 +1,19 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item android:top="-2dp" android:right="-2dp" android:left="-2dp">
+        <shape>
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:dashWidth="10px"
+                android:width="1dp"
+                android:color="#ababb2" />
+        </shape>
+    </item>
+<!--
+                android:dashGap="10px"
+                inside stroke tag
+for dashed under line
+-->
+</layer-list>

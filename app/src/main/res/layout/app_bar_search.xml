@@ -1,0 +1,34 @@
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:elevation="@dimen/elevation_tool_bar"
+    android:gravity="top|start"
+    android:minHeight="?attr/actionBarSize"
+
+
+    >
+
+
+    <EditText
+        android:id="@+id/edt_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/search_edt_hight"
+        android:background="@drawable/custom_search_background"
+        android:drawableLeft="@drawable/ic_action_sea"
+        android:hint="Search for a movie"
+        android:imeOptions="actionSearch"
+        android:inputType="textNoSuggestions|textVisiblePassword"
+        android:lines="1"
+        android:padding="@dimen/search_edt_padding"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/hintText"
+        android:textStyle="normal">
+
+        <requestFocus />
+    </EditText>
+
+
+</android.support.v7.widget.Toolbar>
