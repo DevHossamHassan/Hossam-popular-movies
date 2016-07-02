@@ -4,7 +4,7 @@ and all details about specific movie such as Official trailers , reviews , relea
 
 # Features 
 Search for specific movie 
-![screen](https://github.com/DevHossamHassan/Hossam-popular-movies/blob/master/arts/search.png)
+![screen](<img src="https://github.com/DevHossamHassan/Hossam-popular-movies/blob/master/arts/search.png" width="48">)
 
 ![screen](https://github.com/DevHossamHassan/Hossam-popular-movies/blob/master/arts/popular_main_popup.png)
 
