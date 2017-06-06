@@ -1,4 +1,4 @@
-# Hossam-popular-movies
+# Hossam-popular-movies [![CircleCI](https://circleci.com/gh/DevHossamHassan/Hossam-popular-movies/tree/master.svg?style=shield)](https://circleci.com/gh/DevHossamHassan/Hossam-popular-movies/tree/master)
 Popular Movies is an Android Application enables you to get most popular movies , top rated movies
 and all details about specific movie such as Official trailers , reviews , release date and description.
 
