@@ -22,8 +22,7 @@ dependencies:
       - /usr/local/android-sdk-linux/platforms
       - /usr/local/android-sdk-linux/system-images
   override:
-      - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-24.0.2,
-      android-24,extra-google-m2repository,extra-google-google_play_services,extra-android-m2repository
+      - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-24.0.2,android-24,extra-google-m2repository,extra-google-google_play_services,extra-android-m2repository
       - chmod +x gradlew
       - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
 
