@@ -28,8 +28,8 @@ dependencies:
 
 test:
     override:
-        - (./gradlew :instabug:test)
-        - ./gradlew :app:assembleDebug --console=plain && cp -r sample-app/build/outputs $CIRCLE_ARTIFACTS
+        - (./gradlew :app:test)
+        - ./gradlew :app:assembleDebug --console=plain && cp -r app/build/outputs $CIRCLE_ARTIFACTS
     post:
         - mkdir -p $CIRCLE_TEST_REPORTS/junit/
         - find . -type f -regex ".*/build/test-results/debug/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
